@@ -1,0 +1,24 @@
+function hasTwoCubeSums(n){
+  let A=0;
+  let B=0;
+  for(let a=1;a*a*a<n;a++){
+    for(let b=a+1;b*b*b<n;b++){
+      if(a*a*a+b*b*b==n){
+        A=a;
+        B=b;
+      for (let c=1;c*c*c<n;c++){
+        for(let d=c+1;d*d*d<n;d++){
+          if(c!=A&&d!=B){
+            if(c*c*c+d*d*d==n){
+        
+            return true;
+            }
+          }
+        }
+      }
+      return false;
+      }
+    }
+  }
+  return false;
+}
