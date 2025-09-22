@@ -1,0 +1,28 @@
+function cache(func) {
+let arg=[];
+let res=[];
+function funct(){
+  for(let i=0;i<arg.length;i++){
+   let result=true;
+    for(let j=0;j<arguments.length;j++){
+      if(arg[i][j]!=arguments[j]){
+      result=false;
+      break;
+        }
+
+    }
+    if(result==true)return res[i];
+  }
+  let r=func.apply(null,arguments);
+  let copy=[];
+  for(let k=0;k<arguments.length;k++){
+   copy[k]=arguments[k];
+  }
+    for (let i = 0; i < 1; i++) {
+  arg[arg.length] = copy;
+  res[res.length] = r;
+  return r;
+  }
+  }
+ return funct;
+}
