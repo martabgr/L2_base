@@ -1,0 +1,17 @@
+function domainName(url) {
+  let answ = "";
+  let p = 0;
+ for(let i=0;i<url.length;i++){
+  if(url[i]=="/"&&url[i+1]=='/'){
+    p=i+2;
+  }
+  else if(url[i]=="w"&&url[i+1]=="w"&&url[i+2]=="w"&&url[i+3]=="."){
+        p=i+4;
+     }
+  }
+  for (let i = p; i < url.length && url[i] != "."; i++) {
+    answ += url[i];
+   
+  }
+  return answ;
+}

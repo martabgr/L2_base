@@ -1,0 +1,10 @@
+function isCircleSorted(arr) {
+  let dest = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let n = (i + 1) % arr.length; 
+    if (arr[i] > arr[n]) {
+      dest++;
+    }
+  }
+  return dest<=1;
+}

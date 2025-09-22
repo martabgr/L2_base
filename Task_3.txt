@@ -1,0 +1,23 @@
+function whatCentury(year)
+{
+ 
+let cent = year / 100;
+if (year % 100 !== 0) {
+  cent = cent + 1;
+}
+let c = 0;
+while (c + 1 <= cent) {
+  c = c + 1;
+}
+let suf = "th";
+if (c % 10 === 1 && c % 100 !== 11) {
+  suf = "st";
+} else if (c % 10 === 2 && c % 100 !== 12) {
+  suf = "nd";
+} else if (c % 10 === 3 && c % 100 !== 13) {
+  suf = "rd";
+}
+
+return c + suf;
+
+}

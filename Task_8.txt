@@ -1,0 +1,18 @@
+function expandedForm(num) {
+  let s1 = "";
+  let str = "" + num; 
+  for (let i = 0; i <str.length; i++) {
+    if (str[i] != '0') {
+      let s = str[i];
+      for (let j = i + 1; j < str.length; j++) {
+        s += "0";
+      }
+      if (s1 != "") {
+        s1 += " + ";
+      }
+      s1 += s;
+    }
+  }
+
+  return s1;
+}

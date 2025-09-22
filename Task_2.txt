@@ -1,0 +1,44 @@
+function ipv4Parser(ip, mask){
+  let ipart1="", ipart2="",ipart3="",ipart4="";
+  let mpart1="",mpart2="",mpart3="",mpart4="";
+  let p=1;
+  for(let i=0;i<ip.length;i++){
+    let c=ip[i];
+    if(c=='.'){
+      p++;
+}
+    else{
+      if(p==1){ipart1+=c;}
+      if(p==2){ipart2+=c;}
+      if(p==3){ipart3+=c;}
+      if(p==4){ipart4+=c;}
+    }
+    
+    }
+  p=1;
+  for(let i=0;i<mask.length;i++){
+    let c=mask[i];
+    if(c=='.'){
+      p++;
+}
+    else{
+      if(p==1){mpart1+=c;}
+      if(p==2){mpart2+=c;}
+      if(p==3){mpart3+=c;}
+      if(p==4){mpart4+=c;}
+    }
+    
+    }
+  let sbpart1=+ipart1&+mpart1;
+  let sbpart2=+ipart2&+mpart2;
+  let sbpart3=+ipart3&+mpart3;
+  let sbpart4=+ipart4&+mpart4;
+  let h1=+ipart1&(+(~mpart1)&255);
+  let h2=+ipart2&(+(~mpart2)&255);
+  let h3=+ipart3&(+(~mpart3)&255);
+  let h4=+ipart4&(+(~mpart4)&255);
+  let n=sbpart1+'.'+sbpart2+'.'+sbpart3+'.'+sbpart4;
+  let h=h1+'.'+h2+'.'+h3+'.'+h4;
+  return [n,h];
+  
+}

@@ -1,0 +1,27 @@
+function findMissing(list) {  
+   let n1=list[1]-list[0];
+   let n2=list[2]-list[1];
+   let n3=list[3]-list[2];
+   let n4=list[4]-list[3];
+  let step=n1;
+  if(n2<step){
+    step=n2;
+  }
+  if(n3<step){
+    step=n3;
+  }
+  if(n4<step){
+    step=n4;
+  }
+  let res=0;
+  for(let i=1;i<list.length;i++){
+      if(list[i]-list[i-1]!=step){
+        res=list[i-1]+step;
+        
+      }
+    }
+    return res;
+  
+  
+  
+}
